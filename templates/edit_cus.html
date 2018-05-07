@@ -1,0 +1,103 @@
+<html>
+<head>
+  <title>Edit Customer</title>
+  <link rel="shortcut icon" href="{{ url_for('static',filename='favicon.ico') }}"> 
+</head>
+
+<body background="http://kaba35.com/wp-content/uploads/2015/11/Savin-NY-Website-Background-Web.jpg">
+  
+  <form method="post" action="/customer_edit" align="center">
+
+     <h1 align="center">Edit Customer</h1><br /><br />
+     
+     <div class="Img">
+         <strong><label for="id_Photo">Photo ID URL</label></strong>
+         <input type="text" id="id_Photo" style="width:420px" maxlength="254" placeholder="http://www.photo.url" name="idphoto" value="{{ photo }}">
+
+         <input type="submit" value="Change Photo" name="Change Photo"/><br /><br />
+
+         <strong><label>Photo Preview</label></strong>
+         <img src="{{ photo_preview }}" width="256" height="256"/><br /><br />
+     
+     </div> 
+          <div class="ID">
+          <strong><label for="id_id">ID </label></strong>
+          <input type="text" id="id_id" style="width:520px" maxlength="254" name="id" value="{{ id }}" disabled="true">
+          <br /><br />
+     </div>
+       
+     <div class="Name">
+          <strong><label for="id_FirstName">First Name</label></strong>
+          <input type="text" id="id_FirstName" style="width:469px" maxlength="254" name="First Name" value="{{ fn }}"><br /><br />
+         
+          <strong><label for="id_LastName">Last Name</label></strong>
+          <input type="text" id="id_LastName" style="width:470px" maxlength="254" name="Last Name" value="{{ ln }}"><br /><br />
+     </div>
+
+     <div class="Work">
+          <strong><label for="id_Company">Company</label></strong>
+          <input type="text" id="id_Company"style="width:473px" maxlength="254" name="Company" value="{{ cp }}"><br /><br />
+         
+          <strong> <label for="id_Email">Email Address</label></strong>
+          <input type="email" id="id_Email" style="width:453px" maxlength="254" name="Email" value="{{ em }}"><br /><br />
+     </div>
+
+     <div class="Phone">
+          <strong><label for="id_MobileP">Mobile Phone</label></strong>
+          <input type="tel" id="id_MobileP" style="width:460px" maxlength="254" name="MobileP" value="{{ mp }}"><br /><br />
+        
+          <strong><laber for="id_WorkP">Work Phone</label></strong>
+          <input type="tel" id="id_WorkP" style="width:465px" maxlength="254" name="WorkP" value="{{ wp }}"><br /><br />
+        
+          <strong><label for="id_HomeP">Home Phone</label></strong>
+          <input type="tel" id="id_HomeP" style="width:465px" maxlength="254" name="HomeP" value="{{ hp }}">
+          <br />
+          <br />
+     </div>
+
+     <div class="Personal">
+          <strong><label for="id_Address">Address</label></strong>
+          <input type="text" id="id_Address" style="width:490px" maxlength="512" name="Address" value="{{ ad }}"><br /><br />
+          
+          <strong><label for="id_Web">Website</label></strong>
+          <input type="text" id="id_Web" style="width:490px" maxlength="254" name="Website" value="{{ url }}">
+          <br />
+          <br />
+     </div>
+
+     <div class="Social1">
+          <strong><label for="id_Facebook">Facebook Username</label></strong>
+          <input type="text" id="id_Facebook" style="width:410px" maxlength="254" name="facebook" value="{{ fb }}"><br /><br />
+          
+          <strong><label for="id_Twitter">Twitter Username</label></strong>
+          <input type="text" id="id_Twitter" style="width:430px" maxlength="254" name="twitter" value="{{ tw }}">
+          <br />
+          <br />
+     </div>
+     
+     <div class="Social2">
+          <strong><label for="id_Linkedin">Linkedin Username</label></strong>
+          <input type="text" id="id_Linkedin" style="width:410px" maxlength="254" name="linkedin" value="{{ lk }}"><br /><br />
+        
+          <strong><label for="id_Youtube">Youtube Username</label></strong>
+          <input type="text" id="id_Youtube" style="width:420px" maxlength="254" name="youtube" value="{{ yb }}">
+          <br />
+          <br />
+     </div>
+ 
+     <br /><br />
+  
+     <div class="Zapc">
+          <input type="button" name="Create Zapcode" value="Craeate Zapcode" onclick="window.open('https://my.zap.works/zapcodes/')"/>
+          <label for="id_Zapcode">Zapcode Url</label>
+          <input type="text" id="id_Zapcode" style="width:430px" maxlength="254" name="zapcode" value="{{ zapcode }}">
+          <input type="submit" value="Edit Done" name="Edit Done"/>
+          <br />
+          <br />
+          <br />
+          <br />
+     </div>
+               
+  </form>
+</body>
+</html>

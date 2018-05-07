@@ -1,0 +1,13 @@
+fn2
+ln2
+cp2
+peterzhu9210@gmail.com
+0123456789
+012-345-6789
+012 345 6789
+street,apt,city,state,country,zip code
+http://www.url2.com
+fb2
+tw2
+lk2
+ytb2

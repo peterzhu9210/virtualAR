@@ -1,0 +1,95 @@
+<html>
+<head>
+  <title>Exisited Customer</title>
+  <link rel="shortcut icon" href="{{ url_for('static',filename='favicon.ico') }}">
+</head>
+
+<body background="http://kaba35.com/wp-content/uploads/2015/11/Savin-NY-Website-Background-Web.jpg">
+
+  <form method="post" action="/customer_edit" align="center">
+
+     <h1 align="center">Exisited Customer</h1><br /><br />
+
+     <div class="ID">
+          <strong><label for="id_id">ID </label></strong>
+          <input type="text" id="id_id" maxlength="254" name="ID" value="{{ id }}" disabled="true">
+          <br /><br />
+          <br /><br />
+     </div>
+     
+     <div class="Name">
+          <strong><label for="id_FirstName">First Name</label></strong>
+          <input type="text" id="id_FirstName" style="width:469px" maxlength="254" value="{{ fn }}" disabled="true"><br /><br />
+
+          <strong><label for="id_LastName">Last Name</label></strong>
+          <input type="text" id="id_LastName" style="width:470px" maxlength="254" value="{{ ln }}" disabled="true"><br /><br />
+     </div>
+
+     <div class="Work">
+          <strong><label for="id_Company">Company</label></strong>
+          <input type="text" id="id_Company"style="width:473px" maxlength="254" value="{{ cp }}" disabled="true"><br /><br />
+
+          <strong> <label for="id_Email">Email Address</label></strong>
+          <input type="email" id="id_Email" style="width:453px" maxlength="254" value="{{ em }}" disabled="true">
+          <br />
+          <br />
+     </div>
+
+     <div class="Phone">
+          <strong><label for="id_MobileP">Mobile Phone</label></strong>
+          <input type="tel" id="id_MobileP" style="width:460px" maxlength="254" value="{{ mp }}" disabled="true"><br /><br />
+
+          <strong><laber for="id_WorkP">Work Phone</label></strong>
+          <input type="tel" id="id_WorkP" style="width:465px" maxlength="254" value="{{ wp }}" disabled="true"><br /><br />
+
+          <strong><label for="id_HomeP">Home Phone</label></strong>
+          <input type="tel" id="id_HomeP" style="width:465px" maxlength="254" value="{{ hp }}" disabled="true">
+          <br />
+          <br />
+     </div>
+
+     <div class="Personal">
+          <strong><label for="id_Address">Address</label></strong>
+          <input type="text" id="id_Address" style="width:490px" maxlength="512" value="{{ ad }}" disabled="true"><br /><br />
+
+          <strong><label for="id_Web">Website</label></strong>
+          <input type="text" id="id_Web" style="width:490px" maxlength="254" value="{{ url }}" disabled="true">
+          <br />
+          <br />
+     </div>
+     
+     <div class="Social1">
+          <strong><label for="id_Facebook">Facebook Username</label></strong>
+          <input type="text" id="id_Facebook" style="width:410px" maxlength="254" value="{{ fb }}" disabled="true"><br /><br />
+
+          <strong><label for="id_Twitter">Twitter Username</label></strong>
+          <input type="text" id="id_Twitter" style="width:430px" maxlength="254" value="{{ tw }}" disabled="true">
+          <br />
+          <br />
+     </div>
+   
+     <div class="Social2">
+          <strong><label for="id_Linkedin">Linkedin Username</label></strong>
+          <input type="text" id="id_Linkedin" style="width:410px" maxlength="254" value="{{ lk }}" disabled="true"><br /><br />
+
+          <strong><label for="id_Youtube">Youtube Username</label></strong>
+          <input type="text" id="id_Youtube" style="width:420px" maxlength="254" value="{{ yb }}" disabled="true">
+          <br /><br />
+          <br /><br />
+     </div>
+     
+     <div class="Img">
+         <strong><label for="id_Photo">Photo ID</label></strong>
+         <img src="{{url_for('static', filename= photo)}}" width="256" height="256"/><br /><br /><br /><br />
+     
+         <strong><label for="id_Zapcode">   Zapcode</label></strong>
+         <img src="{{ zapcode }}" width="128" height="128"/><br /><br />
+     </div>
+
+     <div class="Edit" align="right">
+         <input type="submit" name="Edit Information" value="Edit Information" style="font-size:20px"/>
+     </div>     
+ </form>
+</body>
+</html>
+

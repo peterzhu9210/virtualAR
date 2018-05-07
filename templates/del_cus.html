@@ -1,0 +1,29 @@
+<html>
+<head>
+  <title>Delete Customer</title>
+  <link rel="shortcut icon" href="{{ url_for('static',filename='favicon.ico') }}">
+</head>
+
+<body background="http://kaba35.com/wp-content/uploads/2015/11/Savin-NY-Website-Background-Web.jpg">
+
+  <br /><br />
+  <form method="post" action="/delete_customer" align="center">
+                    
+     <h1> Delete Customer</h1>
+
+     <br /><br /><br /><br />
+
+     <label for="id_id" style="font-size:30px">Customer ID: </label>
+    
+     <input typle="text" id="id_id" maxlength="254" name="ID" placeholder="Customer ID" value="{{ id }}"  style="font-size:30px">
+      
+     <input type="submit" name="Read ID" value="Read ID" style="font-size:30px"/><br /><br /><br /><br /><br />
+
+     <font size="30px" color="red"> {{ message | safe }}</font>
+
+     <label>&nbsp;&nbsp;&nbsp;</label>
+     <input type="submit" name="Delete User" value="Delete User" style="font-size:30px">
+  </form>
+</body>
+</html>
+

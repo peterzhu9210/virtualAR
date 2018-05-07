@@ -1,0 +1,210 @@
+
+<html>
+<head>
+    <title>Edit Home</title>  
+    <link rel="shortcut icon" href="{{ url_for('static', filename = 'favicon.ico') }}">
+     
+</head>
+<body>
+<h1>id:  {{ id }}.</h1>
+<!-- WIDGET POPUP MODAL -->
+<div id ="widget_popup_modal" class="modal hide fade">
+
+  <div class="modal-dialog">
+
+	<div class="contact_form  " data-error>
+
+	   <div class="cube_container show_form">
+
+	     <form class="form_screen" action="javascript:void(0);">
+  
+               <div class="modal-body">
+
+                  <!--h5 class="create">Add A Contact Widget</h5>-->
+                  <!--h5 class="update">Edit Contact Widget</h5>-->
+
+                  <div class="form-horizontal">
+
+                     <div class="row-fluid">
+
+                       <div class="span4 text-center contact_image">
+                           
+                           <div class="file_container" data-id="770784" data-status="1"
+                           data-url="//d1sonmy4sf0d9y.cloudfront.net/images/71040-4ee3ab4aabedc4c8a91ecce76c14cd5c"
+                           data-progress_url="https://s3-eu-west-1.amazonaws.com/djsstatus/pub/ff5111279d779bfb273798215c6a1d6d"
+                           data-source data-caption="8.jpg" data-width="256" data-height="256">                             
+                              
+                              <label for="img">Image</label></br>  
+                              <img src="{{url_for('static', filename = photo)}}" width="256" height="256"/>  
+
+                           </div>
+                       </div>
+
+                       <div class="span8">
+                         
+			 <div class="row-fluid">
+
+                            <div class="span6">
+                               <div class="control-group field_FirstName">
+                                 <label for="id_FirstName">First name</label>
+                                 <input type="text" id="id_FirstName"  maxlength="254" name="Firstname" value="{{ fn }}" disabled="true">
+                               </div>
+                            </div>
+
+                            <div class="span6">
+                               <div class="control-group field_LastName">
+                                 <label for="id_LastName">Last Name</label>
+                                 <input type="text" id="id_LastName" maxlength="254" name="LastName" value="{{ ln }}" disabled="true">
+                            </div>
+
+                         </div>
+
+                         <div class="row-fluid">
+
+                            <div class="span6">
+                               <div class="control-group field_Company">
+                                 <label for="id_Company">Company</label>
+                                 <input type="text" id="id_Company"  maxlength="254" name="Company" value="{{ cmp }}" disabled="true">
+                               </div>
+                            </div>
+
+                            <div class="span6">
+                               <div class="control-group field_Email">
+                                 <label for="id_Email">Email address</label>
+                                 <input type="email" id="id_Email" maxlength="254" name="Email" value="{{ email }}" disabled="true">
+                            </div>
+
+                         </div>
+
+                       </div>
+
+                     </div>
+
+                     <div class="row-fluid">
+
+                       <div class="span4">                         
+                         <div class="control-group field_PhoneNumbers">
+                            <div class="clearfix">
+                              <div class="pull-left">
+                                 <label for="id_MobilePhone">Mobile Phone</label>
+                              </div>
+                              
+                              <input type="tel" id="id_MobilePhone" maxlength"254" name="MobilePhone" value="{{ mp }}" disabled="true">
+                            </div>   
+                         </div>
+                       </div>
+
+                       <div class="span4">
+                         <div class="control-group field_PhoneNumbers">
+                            <div class="clearfix">
+                              <div class="pull-left">
+                                 <label for="id_WorkPhone">Work Phone</label>
+                              </div>
+                             
+                              <input type="tel" id="id_WorkPhone" maxlength"254" name="WorkPhone" value="{{ wp }}" disabled="true">
+                            </div>   
+                         </div>
+                       </div>
+
+                       <div class="span4">
+                         <div class="control-group field_PhoneNumbers">
+                            <div class="clearfix">
+                              <div class="pull-left">
+                                 <label for="id_HomePhone">Home Phone</label>
+                              </div>
+                              
+                              <input type="tel" id="id_HomePhone" maxlength"254" name="HomePhone" value="{{ hp }}" disabled="true">
+                            </div>   
+                         </div>
+                       </div>
+
+                     </div>
+
+                     <div class="row-fluid">
+
+                       <div class="span6">
+                         <div class="control-group field_Address">
+                            <label for="id_Adress">Postal address</label>
+                            <input type="text" id="id_Address" maxlength="512" name="Address" value="{{ pa }}" disabled="true">
+                         </div>
+                       </div>
+
+                       <div class="span6">
+                         <div class="control-group field_URL">
+                            <label for="id_URL">Website URL</label>
+                            <input type="text" id="id_URL" maxlength="254" name="URL" value="{{ Web }}" disabled="true">
+                         </div>
+                       </div>
+
+                     </div>
+
+                     <div class="row-fluid">
+                       
+                       <div class="span6">
+                          <div class="control-group field_FacebookURL">
+                            <label for="id_FacebookURL">Facebook username</label>
+                            <div class="input-prepend">
+                              <span class="add-on">facebook.com/</span>
+                              <input id="id_FacebookURL" maxlength="254" name="FacebookURL" type="text" value="{{ fb }}" data-last_val="{{ fb }}" disabled="true">
+                            </div>
+                         </div>
+                       </div>
+
+                       <div class="span6">
+                          <div class="control-group field_TwitterID">
+                            <label for="id_TwitterID">Twitter username</label>
+                            <div class="input-prepend">
+                              <span class="add-on">twitter.com/</span>
+                              <input id="id_TwitterID" maxlength="254" name="TwitterID" type="text" value="{{ tw }}" data-last_val="{{ tw }}" disabled="true">
+                            </div>
+                         </div>
+                       </div>
+                        
+                     </div>
+                     
+                     <div class="row-fluid">
+                       
+                       <div class="span6">
+                          <div class="control-group field_LinkedInURL">
+                            <label for="id_LinkedInURL">LinkedIn (e.g in/username)</label>
+                            <div class="input-prepend">
+                              <span class="add-on">linkedin.com/</span>
+                              <input id="id_LinkedInURL" maxlength="254" name="LinkedInURL" type="text" value="{{ lk }}" data-last_val="{{ lk }}" disabled="true">
+                            </div>
+                         </div>
+                       </div>
+
+                       <div class="span6">
+                          <div class="control-group field_YoutubeURL">
+                            <label for="id_YoutubeURL">Youtube username</label>
+                            <div class="input-prepend">
+                              <span class="add-on">youtube.com/</span>
+                              <input id="id_YoutubeURL" maxlength="254" name="YoutubeURL" type="text" value="{{ yb }}" data-last_val="{{ yb }}" disabled="true">
+                            </div>
+                         </div>
+                       </div>
+                        
+                     </div>
+                    
+                  </div>
+
+	       </div>
+               <div class="modal-footer text-center"> </div>
+	     </form>
+
+           </div>
+
+        </div>
+
+        <script type="text/javascript">
+        setupContactWidgePopup('770439');
+        </script>
+
+     </div>
+
+  </div>
+
+</div>
+</body>
+</html>
+

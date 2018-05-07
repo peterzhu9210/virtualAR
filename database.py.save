@@ -1,0 +1,125 @@
+import MySQLdb as mdb
+import array
+import socket
+import fcntl
+import struct
+
+
+print("Your ID number is: " + "10414708")       
+print("Read done!\n")
+
+print("Start Loading Information!")
+
+
+def get_ip_address():
+            SIOCGIFCONF = 0x8912
+            SIOCGIFADDR = 0x8915
+            BYTES = 4096
+            sck = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+            names = array.array('B',b'\0'*BYTES)
+            bytelen = struct.unpack('iL',fcntl.ioctl(sck.fileno(), SIOCGIFCONF,
+                            struct.pack('iL',BYTES,names.buffer_info()[0])))[0]
+    
+            namestr = names.tostring()
+            ifaces = [namestr[i:i+32].split('\0',1)[0] for i in range(0,bytelen, 32)]
+
+            iplist=""
+            for ifname in ifaces:
+                ip = socket.inet_ntoa(fcntl.ioctl(sck.fileno(),SIOCGIFADDR,struct.pack('256s',ifname[:15]))[20:24])
+                if(ifname == "wlan0"):
+                  iplist = ip
+                  break
+
+            return iplist
+
+
+def store_in_database():
+
+    info = "10414708"
+
+    fo1 = open('information/'+info+".txt","r")
+    lineN = 0;
+    
+    fn = " "
+    ln = " "
+    cp = " "
+    em = " "
+    mp = " "
+    wp = " "
+    hpp = " "
+    add = " "
+    web = " "
+    fb = " "
+    tw = " "
+    lk = " "
+    ytb = " "
+
+    for line in open('information/'+info+".txt"):
+       line = fo1.readline()
+       line = line.strip('\n')
+       if(lineN == 0):
+          fn = line
+       elif(lineN == 1):
+          ln = line
+       elif(lineN == 2):
+          cp = line
+       elif(lineN == 3):
+          em = line
+       elif(lineN == 4):
+          mp = line
+       elif(lineN == 5):
+          wp = line
+       elif(lineN == 6):
+          hpp = line
+       elif(lineN == 7):
+          add = line
+       elif(lineN == 8):
+          web = line
+       elif(lineN == 9):
+          fb = line
+       elif(lineN == 10):
+          tw = line
+       elif(lineN == 11):
+          lk = line
+       elif(lineN == 12):
+          ytb = line
+       lineN = lineN + 1
+    fo1.close()
+    
+
+    print(fn)
+    print(ln)
+    print(cp)
+    print(em)
+    print(mp)
+    print(wp)
+    print(hpp)
+    print(add)
+    print(web)
+    print(fb)
+    print(tw)
+    print(lk)
+    print(ytb)
+    print("Start")
+
+    ip = get_ip_address()
+
+    print(ip)
+    conn = mdb.connect(host=ip,user='root"',passwd='ZHUzhu92',db='customerinfo',charset='utf8')
+    print("1")
+    cur=conn.cursor()
+    sql1 = "INSERT INTO customerinfo.Customer(ID,FIRST_NAME,LAST_NAME,COMPANY,EMAIL,MOBILEP,WORKP,HOMEP,ADDRESS,WEBSITE,FACEBOOK,TWITTER,LINKEDIN,YOUTUBE) "
+    print(sql1)
+    sql2 = "VALUES(info,fn,ln,cp,em,mp,wp,hp,add,web,fb,tw,lk,ytb);"
+    print(sql2)
+    sql = sql1 + sql2
+    print(sql)
+    cur.execute(sql)
+    conn.commit()
+    print("Done")
+    cur.close()
+    conn.close()
+
+
+store_in_database()
+

@@ -1,0 +1,22 @@
+<html>
+<head>
+  <title>No Customer Exists</title>
+  <link rel="shortcut icon" href="{{ url_for('static',filename='favicon.ico') }}">
+</head>
+
+<body background="http://kaba35.com/wp-content/uploads/2015/11/Savin-NY-Website-Background-Web.jpg">
+
+  <br /><br /><br /><br />
+  <form method="post" action="/new_customer" align="center">
+
+     <strong><h0 align="center" style="font-size:30px">&nbsp;Customer ID: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "{{ id }}"</h0></strong>
+                     
+     <h1 align="center">&nbsp;Customer doesn't exist.</h1>
+
+     <h2 align="center" style="font-size:30px">Please create a new one.</h2><br /><br /><br /><br />
+
+     <input type="submit" name="Create a new user" value="Create a new user" style="font-size:30px">
+  </form>
+</body>
+</html>
+
